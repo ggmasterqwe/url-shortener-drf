@@ -1,4 +1,4 @@
-# url-shorter-drf
+# url-shortener-drf
 
 In this project, we wants to make url shorter with given original url.
 
