@@ -7,6 +7,14 @@ class Url(models.Model):
     user_url = models.URLField()
     slug = models.SlugField(unique=True, max_length=30, blank=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,)
+    date_created = models.DateTimeField(auto_now_add=True)
+    clicked = models.IntegerField(default=0)
+
+
+    def click(self):
+        self.clicked += 1
+        self.save()
+
 
     def save(self, *args, **kwargs):
         if not self.slug:
