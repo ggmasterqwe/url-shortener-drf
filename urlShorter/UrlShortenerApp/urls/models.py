@@ -15,7 +15,6 @@ class Url(models.Model):
         self.clicked += 1
         self.save()
 
-
     def save(self, *args, **kwargs):
         if not self.slug:
             hash_slug = hashlib.sha1("{}{}".format(self.id, self.user_url).
